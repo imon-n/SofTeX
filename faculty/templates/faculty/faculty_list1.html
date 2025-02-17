@@ -1,0 +1,170 @@
+{% extends 'base1.html' %}
+{% load static %} 
+{% block title %}Faculty {{ session.year }}{% endblock %}
+
+{% block content %}
+
+<div class="container mx-auto px-5 py-8">
+    <div class="flex flex-col lg:flex-row gap-6">
+
+        <section class="w-full">
+            <h3 class="text-2xl md:text-4xl pb-5 font-bold text-center text-gray-800">Faculty Members</h3>
+            <div class="flex justify-center">
+                <div class="bg-[#EFEBE3] shadow-xl rounded-lg p-2 transform hover:scale-105 w-96 py-6 transition text-center">
+                    <img src="{% static 'image/human.png' %}" alt="Faculty Member" class="w-24 h-24 mx-auto rounded-full object-cover">
+                    <div class="text-center mt-2">
+                        <h4 class="text-md font-bold text-gray-900">Prof. Dr. ABC Khan</h4>
+                        <p class="text-gray-600 text-sm mt-1"><span class="font-bold text-base">Specialization Area:</span> IoT, AI, Brain Signal</p>
+                        <div class="grid grid-cols-2 gap-2 px-10">
+                            <a href="mailto:abc.khan@example.com" class="block mt-2 bg-orange-600 text-white py-2 px-3 rounded-lg text-sm hover:bg-yellow-600 transition">
+                                Email
+                            </a>
+                            <a href="https://facebook.com/abc.khan" target="_blank" class="block mt-2 bg-blue-500 text-white py-2 rounded-lg text-sm hover:bg-yellow-600 transition">
+                                Facebook
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 mt-6">
+                <div class="bg-[#EFEBE3] py-7 shadow-xl rounded-lg p-2 transform hover:scale-105 transition">
+                    <img src="{% static 'image/human.png' %}" alt="Faculty Member" class="w-24 h-24 mx-auto rounded-full object-cover">
+                    <div class="text-center mt-2">
+                        <h4 class="text-md font-bold text-gray-900">Prof Dr. XYZ</h4>
+                        <p class="text-gray-600 text-sm mt-1">Embedded System Engineer, RexoIT</p>
+                        <div class="grid grid-cols-2 gap-2 px-10">
+                            <a href="mailto:xyz@example.com" class="block mt-2 bg-orange-600 text-white py-2 px-3 rounded-lg text-sm hover:bg-yellow-600 transition">
+                                Email
+                            </a>
+                            <a href="https://facebook.com/xyz" target="_blank" class="block mt-2 bg-blue-500 text-white py-2 rounded-lg text-sm hover:bg-yellow-600 transition">
+                                Facebook
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-[#EFEBE3] py-7 shadow-xl rounded-lg p-2 transform hover:scale-105 transition">
+                    <img src="{% static 'image/human.png' %}" alt="Faculty Member" class="w-24 h-24 mx-auto rounded-full object-cover">
+                    <div class="text-center mt-2">
+                        <h4 class="text-md font-bold text-gray-900">Prof Dr. XYZ</h4>
+                        <p class="text-gray-600 text-sm mt-1">Embedded System Engineer, RexoIT</p>
+                        <div class="grid grid-cols-2 gap-2 px-10">
+                            <a href="mailto:xyz@example.com" class="block mt-2 bg-orange-600 text-white py-2 px-3 rounded-lg text-sm hover:bg-yellow-600 transition">
+                                Email
+                            </a>
+                            <a href="https://facebook.com/xyz" target="_blank" class="block mt-2 bg-blue-500 text-white py-2 rounded-lg text-sm hover:bg-yellow-600 transition">
+                                Facebook
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-[#EFEBE3] py-7 shadow-xl rounded-lg p-2 transform hover:scale-105 transition">
+                    <img src="{% static 'image/human.png' %}" alt="Faculty Member" class="w-24 h-24 mx-auto rounded-full object-cover">
+                    <div class="text-center mt-2">
+                        <h4 class="text-md font-bold text-gray-900">Prof Dr. XYZ</h4>
+                        <p class="text-gray-600 text-sm mt-1">Embedded System Engineer, RexoIT</p>
+                        <div class="grid grid-cols-2 gap-2 px-10">
+                            <a href="mailto:xyz@example.com" class="block mt-2 bg-orange-600 text-white py-2 px-3 rounded-lg text-sm hover:bg-yellow-600 transition">
+                                Email
+                            </a>
+                            <a href="https://facebook.com/xyz" target="_blank" class="block mt-2 bg-blue-500 text-white py-2 rounded-lg text-sm hover:bg-yellow-600 transition">
+                                Facebook
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-[#EFEBE3] py-7 shadow-xl rounded-lg p-2 transform hover:scale-105 transition">
+                    <img src="{% static 'image/human.png' %}" alt="Faculty Member" class="w-24 h-24 mx-auto rounded-full object-cover">
+                    <div class="text-center mt-2">
+                        <h4 class="text-md font-bold text-gray-900">Prof Dr. XYZ</h4>
+                        <p class="text-gray-600 text-sm mt-1">Embedded System Engineer, RexoIT</p>
+                        <div class="grid grid-cols-2 gap-2 px-10">
+                            <a href="mailto:xyz@example.com" class="block mt-2 bg-orange-600 text-white py-2 px-3 rounded-lg text-sm hover:bg-yellow-600 transition">
+                                Email
+                            </a>
+                            <a href="https://facebook.com/xyz" target="_blank" class="block mt-2 bg-blue-500 text-white py-2 rounded-lg text-sm hover:bg-yellow-600 transition">
+                                Facebook
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-[#EFEBE3] py-7 shadow-xl rounded-lg p-2 transform hover:scale-105 transition">
+                    <img src="{% static 'image/human.png' %}" alt="Faculty Member" class="w-24 h-24 mx-auto rounded-full object-cover">
+                    <div class="text-center mt-2">
+                        <h4 class="text-md font-bold text-gray-900">Prof Dr. XYZ</h4>
+                        <p class="text-gray-600 text-sm mt-1">Embedded System Engineer, RexoIT</p>
+                        <div class="grid grid-cols-2 gap-2 px-10">
+                            <a href="mailto:xyz@example.com" class="block mt-2 bg-orange-600 text-white py-2 px-3 rounded-lg text-sm hover:bg-yellow-600 transition">
+                                Email
+                            </a>
+                            <a href="https://facebook.com/xyz" target="_blank" class="block mt-2 bg-blue-500 text-white py-2 rounded-lg text-sm hover:bg-yellow-600 transition">
+                                Facebook
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-[#EFEBE3] py-7 shadow-xl rounded-lg p-2 transform hover:scale-105 transition">
+                    <img src="{% static 'image/human.png' %}" alt="Faculty Member" class="w-24 h-24 mx-auto rounded-full object-cover">
+                    <div class="text-center mt-2">
+                        <h4 class="text-md font-bold text-gray-900">Prof Dr. XYZ</h4>
+                        <p class="text-gray-600 text-sm mt-1">Embedded System Engineer, RexoIT</p>
+                        <div class="grid grid-cols-2 gap-2 px-10">
+                            <a href="mailto:xyz@example.com" class="block mt-2 bg-orange-600 text-white py-2 px-3 rounded-lg text-sm hover:bg-yellow-600 transition">
+                                Email
+                            </a>
+                            <a href="https://facebook.com/xyz" target="_blank" class="block mt-2 bg-blue-500 text-white py-2 rounded-lg text-sm hover:bg-yellow-600 transition">
+                                Facebook
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-[#EFEBE3] py-7 shadow-xl rounded-lg p-2 transform hover:scale-105 transition">
+                    <img src="{% static 'image/human.png' %}" alt="Faculty Member" class="w-24 h-24 mx-auto rounded-full object-cover">
+                    <div class="text-center mt-2">
+                        <h4 class="text-md font-bold text-gray-900">Prof Dr. XYZ</h4>
+                        <p class="text-gray-600 text-sm mt-1">Embedded System Engineer, RexoIT</p>
+                        <div class="grid grid-cols-2 gap-2 px-10">
+                            <a href="mailto:xyz@example.com" class="block mt-2 bg-orange-600 text-white py-2 px-3 rounded-lg text-sm hover:bg-yellow-600 transition">
+                                Email
+                            </a>
+                            <a href="https://facebook.com/xyz" target="_blank" class="block mt-2 bg-blue-500 text-white py-2 rounded-lg text-sm hover:bg-yellow-600 transition">
+                                Facebook
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-[#EFEBE3] py-7 shadow-xl rounded-lg p-2 transform hover:scale-105 transition">
+                    <img src="{% static 'image/human.png' %}" alt="Faculty Member" class="w-24 h-24 mx-auto rounded-full object-cover">
+                    <div class="text-center mt-2">
+                        <h4 class="text-md font-bold text-gray-900">Prof Dr. XYZ</h4>
+                        <p class="text-gray-600 text-sm mt-1">Embedded System Engineer, RexoIT</p>
+                        <div class="grid grid-cols-2 gap-2 px-10">
+                            <a href="mailto:xyz@example.com" class="block mt-2 bg-orange-600 text-white py-2 px-3 rounded-lg text-sm hover:bg-yellow-600 transition">
+                                Email
+                            </a>
+                            <a href="https://facebook.com/xyz" target="_blank" class="block mt-2 bg-blue-500 text-white py-2 rounded-lg text-sm hover:bg-yellow-600 transition">
+                                Facebook
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-[#EFEBE3] py-7 shadow-xl rounded-lg p-2 transform hover:scale-105 transition">
+                    <img src="{% static 'image/human.png' %}" alt="Faculty Member" class="w-24 h-24 mx-auto rounded-full object-cover">
+                    <div class="text-center mt-2">
+                        <h4 class="text-md font-bold text-gray-900">Prof Dr. XYZ</h4>
+                        <p class="text-gray-600 text-sm mt-1">Embedded System Engineer, RexoIT</p>
+                        <div class="grid grid-cols-2 gap-2 px-10">
+                            <a href="mailto:xyz@example.com" class="block mt-2 bg-orange-600 text-white py-2 px-3 rounded-lg text-sm hover:bg-yellow-600 transition">
+                                Email
+                            </a>
+                            <a href="https://facebook.com/xyz" target="_blank" class="block mt-2 bg-blue-500 text-white py-2 rounded-lg text-sm hover:bg-yellow-600 transition">
+                                Facebook
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</div>
+
+{% endblock %}

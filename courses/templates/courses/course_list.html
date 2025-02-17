@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block title %}Courses in {{ semester.name }}{% endblock %}
+
+{% block content %}
+<h2>All Documents for {{ semester.name }}</h2>
+<div class="course-list">
+    {% for course in courses %}
+        <div class="course-box">
+            <a href="{% url 'course_detail' course.id %}">
+                {{ course.name }}
+            </a>
+        </div>
+    {% endfor %}
+</div>
+
+
+{% if routine %}
+    <div class="routine-section">
+        <h3>Routine for {{ semester.name }}</h3>
+        <p>{{ routine.title }}</p>
+        <a href="{{ routine.file.url }}">Download Routine</a>
+    </div>
+{% else %}
+    <p>No routine available for this semester.</p>
+{% endif %}
+
+<a href="{% url 'semester_list' %}">Back to Semesters</a>
+{% endblock %}

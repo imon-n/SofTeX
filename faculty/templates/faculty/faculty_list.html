@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% block title %}Faculty Members{% endblock %}
+
+{% block content %}
+<h2 class="text-center text-danger">Faculty Members</h2>
+    {% for faculty in faculty_members %}
+        <div class="card" style="width: 18rem;">
+            {% if faculty.picture %}
+                <img class="card-img-top" src="{{ faculty.picture.url }}" alt="Card image cap">
+            {% else %}
+                <img class="card-img-top" src="/path/to/default/image.jpg" alt="Default image cap">
+            {% endif %}
+            <div class="card-body">
+                <h5 class="card-title">{{ faculty.name }}</h5>
+                <p class="card-text">{{ faculty.position }}</p>
+                <a href="{% url "teacher_details" faculty.id %}" class="btn btn-primary">Details</a>
+                <p><span class="text-xl font-bold">Specialization Area:</span> Optics, Photonics, Solar</p>
+            </div>
+        </div>
+        <br>
+    {% endfor %}  
+{% endblock %}
+

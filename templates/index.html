@@ -1,0 +1,264 @@
+{% extends "base1.html" %} 
+{% block content %} 
+{% load static %}
+
+
+{% comment %} header  {% endcomment %}
+<section class=" max-h-[500px] pb-6 bg-gray-200">
+  <div
+    class="flex flex-col pl-10 md:flex-row items-center justify-between text-center md:text-left space-y-6 md:space-y-0"
+  >
+    <div class="md:w-1/2 text-center">
+      <h2 class="text-2xl md:text-4xl font-bold">
+        Explore,
+        <span class="text-[#0033A0]"
+          >Innovate, and <br class="hidden md:block" />
+          Transform</span
+        >
+        with Cutting-Edge Projects & Research!
+      </h2>
+      <p class="mt-4 text-gray-700">
+        The Department of Electrical and Electronic Engineering (EEE) at
+        Chittagong University is committed to producing skilled
+        engineers in electrical and electronic technology.
+      </p>
+    </div>
+    <div class="md:w-1/2 flex justify-center">
+      <img
+        src="{% static './image/IT.png' %}"
+        alt="EEE Department Banner"
+        class="w-full h-auto max-w-lg md:max-w-xl"
+      />
+    </div>
+  </div>
+</section>
+
+
+{% comment %} main section  {% endcomment %}
+<main class="md:container mx-auto">
+  <h3
+    class="text-2xl text-center md:text-5xl font-semibold pt-16 pb-8 italic text-[#0033A0]"
+  >
+    Recent Stories
+  </h3>
+  <div
+    class="carousel carousel-center bg-[#EFEBE3] rounded-box max-w-full space-x-6 py-0 justify-center"
+    id="carousel"
+  >
+    <div class="carousel-item">
+      <img
+        src="{% static './image/EEEFEST.jpg' %}"
+        class="rounded-box w-[500px] h-[400px] object-cover"
+      />
+    </div>
+    <div class="carousel-item">
+      <img
+        src="{% static './image/EEEFEST.jpg' %}"
+        class="rounded-box w-[500px] h-[400px] object-cover"
+      />
+    </div>
+    <div class="carousel-item">
+      <img
+        src="{% static './image/WhatsApp Image 2025-02-14 at 16.57.25_c0f8b1a0.jpg' %}"
+        class="rounded-box w-[500px] h-[400px] object-cover"
+      />
+    </div>
+    <div class="carousel-item">
+      <img
+        src="{% static './image/two.jpg' %}"
+        class="rounded-box w-[500px] h-[400px] object-cover"
+      />
+    </div>
+    <div class="carousel-item">
+      <img
+        src="{% static './image/Murshad_Sir.jpg' %}"
+        class="rounded-box w-[500px] h-[400px] object-cover"
+      />
+    </div>
+  </div>
+</main>
+
+
+
+<!-- FAQ Section(Optional) -->
+<div class="p-20">
+  <h2 class="text-2xl font-bold text-center mb-6">
+    Frequently Asked Questions
+  </h2>
+  <div class="space-y-4">
+    <div
+      tabindex="0"
+      class="collapse collapse-arrow border-base-300 border"
+    >
+      <div class="collapse-title text-xl font-medium bg-gray-200">
+        What career opportunities are available for CU EEE graduates?
+      </div>
+      <div class="collapse-content">
+        <p class="space-y-2 pt-3">
+          Graduates can work in power generation companies (BPDB, DESCO),
+          telecommunication firms, automation industries, embedded systems,
+          and software development. Many also pursue higher studies abroad.
+        </p>
+      </div>
+    </div>
+    <div
+      tabindex="0"
+      class="collapse collapse-arrow border-base-300 border"
+    >
+      <div class="collapse-title text-xl font-medium bg-gray-200">
+        Does the CU EEE department offer internship or research
+        opportunities?
+      </div>
+      <div class="collapse-content">
+        <p class="space-y-2 pt-3">
+          Yes, the CU EEE department provides internship and research
+          opportunities in collaboration with industries, universities, and
+          research centers. Students can participate in projects related to
+          power systems, AI, IoT, and automation, and many get the chance to
+          publish research papers in IEEE and other journals.
+        </p>
+      </div>
+    </div>
+    <div
+      tabindex="0"
+      class="collapse collapse-arrow border-base-300 border"
+    >
+      <div class="collapse-title text-xl font-medium bg-gray-200">
+        Are there any student clubs or activities in CU EEE?
+      </div>
+      <div class="collapse-content">
+        <p class="space-y-2 pt-3">
+          Yes, CU EEE has student clubs like IEEE CU Student Branch,
+          Robotics Club, and Optica CU Student Branch, which organize
+          workshops, hackathons, and industrial tours to enhance learning.
+        </p>
+      </div>
+    </div>
+    <div
+      tabindex="0"
+      class="collapse collapse-arrow border-base-300 border"
+    >
+      <div class="collapse-title text-xl font-medium bg-gray-200">
+        What are the major subjects covered in the CU EEE curriculum?
+      </div>
+      <div class="collapse-content">
+        <p class="space-y-2 pt-3">
+          The curriculum includes Power Systems, Electrical Machines,
+          Control Systems, Electronics, Communication Engineering, Digital
+          Signal Processing (DSP), Microcontrollers, and Renewable Energy.
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Subscribes Section -->
+<div
+  class="relative z-10 mx-6 md:max-w-3xl md:mx-auto mt-12 md:mt-24 -mb-40 px-8 py-3 bg-gray-200 rounded-3xl"
+>
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+    <div>
+      <img class="w-full h-auto" src="{% static './image/QU.png' %}" alt="" />
+    </div>
+    <div
+      class="flex flex-col space-y-3 items-center text-center justify-center md:items-start md:text-start"
+    >
+      <h2 class="text-xl font-semibold text-blue-800 md:text-black">
+        Feel free to ask us anything related to our department. We're here
+        to help!
+      </h2>
+
+      <input
+        class="w-full border border-violet-900 h-12 pl-6 rounded-2xl"
+        type="email"
+        placeholder="Enter Your Query"
+      />
+      <a class="btn w-24 bg-violet-800 text-white text-center py-2 rounded-2xl hover:bg-violet-900 transition">
+        Send
+      </a>
+    </div>
+  </div>
+</div>
+
+
+<!-- Footer -->
+<footer class="bg-violet-800 text-white pt-60">
+  <div class="container mx-auto px-6">
+    <div
+      class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 text-center md:text-left"
+    >
+      <!-- Column 1 -->
+      <div class="space-y-4 text-lg font-semibold">
+        <p>Contact</p>
+        <p>FAQ</p>
+        <p>Offered Program</p>
+        <p>Academic Calendar</p>
+      </div>
+
+      <!-- Column 2 -->
+      <div class="space-y-4 text-lg font-semibold">
+        <p>Class Routine</p>
+        <p>Course Catalog</p>
+        <p>Offered Program</p>
+        <p>Class Routine</p>
+      </div>
+
+      <!-- Column 3 -->
+      <div class="space-y-4 text-lg font-semibold">
+        <p>General Events</p>
+        <p>Facilities</p>
+        <p>News</p>
+        <p>Student Advisor</p>
+      </div>
+
+      <!-- Column 4 (Social Links) -->
+      <div class="space-y-6 text-center md:text-left">
+        <h5 class="text-xl font-bold">Follow Us</h5>
+        <div
+          class="flex justify-center md:justify-start space-x-4 text-3xl"
+        >
+          <a href="#" class="text-blue-500"
+            ><i class="fa-brands fa-facebook"></i
+          ></a>
+          <a href="#" class="text-pink-400"
+            ><i class="fa-brands fa-instagram"></i
+          ></a>
+          <a href="#" class="text-blue-500"
+            ><i class="fa-brands fa-linkedin"></i
+          ></a>
+          <a href="#" class="text-red-500"
+            ><i class="fa-brands fa-youtube"></i
+          ></a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Copyright Section -->
+    <div class="mt-12 text-center text-gray-300 text-sm pb-4">
+      © 2024 CU EEE Department. All Rights Reserved.
+    </div>
+  </div>
+</footer>
+
+<script>
+  let index = 0;
+  const carousel = document.getElementById("carousel");
+  const items = carousel.children;
+  const totalItems = items.length;
+
+  function autoSlide() {
+    index = (index + 1) % totalItems; // Move to the next image
+    carousel.scrollTo({
+      left: items[index].offsetLeft,
+      behavior: "smooth",
+    });
+  }
+  setInterval(autoSlide, 4000); // Change image every 3 seconds
+
+  // for Notice
+  function openNoticeInNewTab() {
+    window.open("notice.html?openModal=true", "_blank");
+  }
+</script>
+
+{% endblock %}

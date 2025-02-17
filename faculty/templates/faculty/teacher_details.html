@@ -1,0 +1,83 @@
+{% extends 'base.html' %}
+
+{% block title %}Faculty Members{% endblock %}
+
+{% block content %}
+
+<br>
+<div class="faculty-item text-center m-auto">
+    {% if teacher.picture %}
+        <img src="{{ teacher.picture.url }}" alt="Sir pic" class="teacher-picture"/>
+    {% endif %}
+    <h1>{{ teacher.name }}</h1>
+    <h5>{{ teacher.position }}</h5>
+    <p>{{ teacher.office_address }}</p>
+
+    {% if teacher.linkedin %}
+        <a href="{{ teacher.linkedin }}" class="btn btn-primary" target="_blank">LinkedIn</a>
+    {% endif %}
+    {% if teacher.email %}
+        <a href="mailto:{{ teacher.email }}" class="btn btn-info mx-2" target="_blank">Email</a>
+    {% endif %} 
+    <br><br>
+
+    <span class="text-primary fw-bold">About:</span>
+    <span>{{teacher.academic_background | truncatewords:20}}.......</span>
+    <br><br>
+    <span class="text-primary fw-bold">Specialized Area:</span>
+    <span>{{teacher.area_of_interest}}</span> <br><br>
+
+    <h3>Academic Background :</h3>
+    <ul>
+        {% for background in academic_backgrounds %}
+            <ul>{{ background.title }} from {{ background.institution }} in {{ background.passing_year }}</ul>
+        {% endfor %}
+    </ul>
+    
+    {% if teacher.publications %}
+        <p><a href="{{ teacher.publications }}" target="_blank">Publications:</a></p>
+    {% endif %}
+</div>
+{% endblock %}
+
+
+
+
+
+
+
+
+{% comment %} {% extends 'base.html' %}
+
+{% block title %}Faculty Members{% endblock %}
+
+{% block content %}
+
+<br>
+<div class="faculty-item text-center m-auto">
+    {% if teacher.picture %}
+        <img src="{{ teacher.picture.url }}" alt="Sir pic" class="teacher-picture"/>
+    {% endif %}
+    <h1>{{ teacher.name }}</h1>
+    <h5>{{ teacher.position }}</h5>
+    <p>{{ teacher.office_address }}</p>
+
+    {% if teacher.linkedin %}
+        <a href="{{ teacher.linkedin }}" class="btn btn-primary" target="_blank" >LinkedIn </a>
+    {% endif %}
+    {% if teacher.email %}
+        <a href="mailto:{{ teacher.email }}" class="btn btn-info mx-2" target="_blank" >Email</a>
+    {% endif %} 
+    <br><br>
+
+    <span class="text-primary fw-bolder">About:</span>
+    <span>{{ teacher.academic_background | truncatewords:18}}......</span> 
+<br><br>
+    <span class="text-primary fw-bolder">Area of Interest : </span>
+    <span>{{teacher.area_of_interest}}</span>
+
+    {% if teacher.publications %}
+    <p><a href="{{ teacher.publications }}" target="_blank">Publications:</a></p>
+    {% endif %}
+</div>
+{% endblock %} {% endcomment %}

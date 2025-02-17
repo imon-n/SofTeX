@@ -1,0 +1,8 @@
+.styled-image {
+    /* Example CSS properties to style the image */
+    width: 300px;
+    height: auto; /* Maintain aspect ratio */
+    border: 2px solid #000;
+    border-radius: 10px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+}

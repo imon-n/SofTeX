@@ -1,0 +1,38 @@
+{% extends 'base1.html' %} {% block title %}Available Books {{ session.year }}{% endblock %}
+
+{% block content %}
+<main class="md:container mx-auto">
+  <!-- service -->
+  <section class="service p-10">
+    <h3 class="text-2xl text-center md:text-4xl font-bold pb-5 text-[#0033A0]">
+      Available Resources
+    </h3>
+    <!-- cards -->
+    <div class="grid justify-center place-items-center grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
+      {% for book in books %}
+      <div class="card bg-[#EFEBE3] w-full max-w-sm shadow-xl h-auto p-5 rounded-lg">
+        {% if book.image %}
+          <figure class="px-5 pt-3 h-56 w-full flex justify-center items-center">
+            <img src="{{ book.image.url }}" class="w-full h-full object-cover rounded-md" alt="Book Image" />
+          </figure>
+        {% else %}
+          <figure class="px-5 pt-3 h-56 flex justify-center items-center">
+            <img src="/path/to/default/image.jpg" class="w-full h-full object-cover rounded-md" alt="Book Image" />
+          </figure>
+        {% endif %}
+        <div class="card-body text-center py-4">
+          <div class="flex justify-center w-full">
+            <h2 class="card-title text-xl font-bold mb-2 text-center">{{ book.book_name }}</h2>
+          </div>          
+          <p class="text-lg text-gray-700 mb-3">{{ book.about }}</p>
+          <div class="flex bg-gray-300 py-2 rounded-xl flex-grid justify-center items-center gap-2 w-full">
+            <i class="fa-brands fa-whatsapp text-3xl md:text-4xl font-bold text-green-500"></i>
+            <label for="whatsapp" class="text-xl font-bold text-gray-800">+88017. . . . . .36</label>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </section>
+</main>
+{% endblock %}

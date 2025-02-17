@@ -1,0 +1,69 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}CU EEE{% endblock %}</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    
+    {% comment %} tailwind  {% endcomment %}
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.23/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+  </head>
+<body class="">
+    <nav class="navbar navbar-expand-lg navbar-light bg-info">
+        <div class="container-fluid bg-info">
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link h3 mx-3" href="{% url "homepage" %}">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link h3 mx-3" href="{% url "notice" %}">Notice</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link h3 mx-3" href="{% url "faculty_list" %}">Teacher</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link h3 mx-3" href="{% url "session_list" %}">Alumni</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link h3 mx-3" href="{% url "semester_list" %}">Semester</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link h3 mx-3" href="{% url "available_book" %}">Available_Book</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link h3 mx-3" href="{% url "add_book" %}">Add Book</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link h3 " href="{% url "my_semester" %}">My_Note</a>
+              </li>
+              
+            </ul>
+            <div class="d-flex">
+              <button class="btn btn-outline-success bg-success mx-2 text-white" type="submit">SignUp</button>
+              <button class="btn btn-outline-success bg-danger text-white" type="submit">LogIn</button>
+            </div>
+          </div>
+        </div>
+      </nav>
+
+    
+    
+    
+    
+    <div class="container">
+        {% block content %}{% endblock %}
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+</body>
+</html> 

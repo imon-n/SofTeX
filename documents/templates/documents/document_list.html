@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>Uploaded Files for {{ course.name }}</h2>
+{% for document in documents %}
+    <div class="card" style="width: 18rem;">
+        <div class="card-body">
+            <h5 class="card-title">{{ document.title }}</h5>
+            {% if document.files %}
+                <a href="{{ document.files.url }}" class="btn btn-primary" target="_blank">View File</a>
+            {% endif %}
+        </div>
+    </div>
+    <br>
+{% endfor %}
+<a href="{% url 'upload_document' course.id %}" class="btn btn-success">Upload New Document</a>
+{% endblock %}

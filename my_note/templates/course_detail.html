@@ -1,0 +1,75 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container mt-5">
+    <h2 class="text-center mb-4">{{course}}</h2>
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>Title</th>
+                <th>Already Studied..?</th>
+                <th>File</th>
+                <th>About</th>
+                <th>Date</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for document in documents %}
+            <tr>
+                <td>{{ document.title }}</td>
+                <td>
+                    <form method="POST" style="display:inline;">
+                        {% csrf_token %}
+                        <input type="hidden" name="document_id" value="{{ document.pk }}">
+                        <div class="form-check d-flex justify-content-center align-items-center pt-4">
+                            <input
+                                class="form-check-input border-dark"
+                                type="checkbox"
+                                name="already_studied"
+                                {% if document.already_studied %}checked{% endif %}
+                                onclick="this.form.submit();"
+                            >
+                        </div>
+                    </form>                    
+                </td>
+                <td class="text-center">
+                    {% if document.files.exists %}
+                        {% for file in document.files.all %}
+                            <a href="{{ file.file.url }}">{{ file.file.name }}</a><br>
+                        {% endfor %}
+                        <div class="text-center pt-3 mb-3">
+                            <a href="{% url 'upload_document_file' document.id %}" class="btn btn-success mt-2"> + </a>
+                        </div>
+                    {% else %}
+                        <div class="text-center">
+                            No files- uploaded.
+                        </div>
+                        <div class="text-center pt-2 mb-3">
+                            <a href="{% url 'upload_document_file' document.id %}" class="btn btn-success mt-2"> + </a>
+                        </div>
+                    {% endif %}
+                </td>                
+                <td>{{ document.about }}</td>
+                <td>{{ document.date }}</td>
+                <td>
+                    <div>
+                        <a href="{% url "edit_document" document.id %}" class="btn btn-warning">Edit</a>
+                        <a href="{% url "delete_document" document.id %}" class="btn btn-danger">Delete</a>
+                    </div>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <div class="text-center pt-3">
+        {% comment %} <a href="" class="btn btn-info">Create New Document</a> {% endcomment %}
+        <a href="{% url 'create_document' course.id %}" class="btn btn-info">Create New Document</a>
+    </div>
+</div>
+<br>
+<br>
+{% endblock%}
+
+
+convert in Tailwind, Not use Django code only HTML,Tailwind , Responsive

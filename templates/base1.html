@@ -1,0 +1,160 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>EEE</title>
+    <!-- Font CDN -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Sora:wght@100..800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <!-- DaisyUI -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      .sora-font {
+        font-family: "Sora", serif;
+        font-optical-sizing: auto;
+      }
+    </style>
+  </head>
+
+  <body class="sora-font">
+    <section class="bg-gray-200">
+      <header class="md:container mx-auto">
+        <!-- navbar 1  -->
+        <div class="navbar bg-base-100 bg-gray-200 pt-10">
+          <div class="navbar-start">
+            <img
+              class="w-10 sm:w-12 md:w-18 lg:w-20"
+              src="{% static './image/EEE-Logo.png' %}"
+              alt="Logo"
+            />
+          </div>
+
+          <div class="navbar-center hidden lg:flex">
+            <ul class="menu menu-horizontal px-1 text-xl font-semibold">
+              <li><a href="{% url "indexpage" %}">Home</a></li>
+              <li><a href="{% url "homepage" %}">Academics</a></li>
+              <li><a href="{% url "available_book" %}">EduShare</a></li>
+              <li>
+                <details>
+                  <summary>Community</summary>
+                  <ul class="p-2 text-xl">
+                    <li><a href="{% url "faculty_list1" %}">Teacher</a></li>
+                    <li><a href="{% url "alumni_list1" %}">Alumni</a></li>
+                    <li><a>Students</a></li>
+                  </ul>
+                </details>
+              </li>
+              <li>
+                <details>
+                  <summary>Study Hub</summary>
+                  <ul class="p-2 text-xl">
+                    <li><a>Documents</a></li>
+                    <li><a>My_Notes</a></li>
+                  </ul>
+                </details>
+              </li>
+            </ul>
+          </div>
+          <div class="navbar-end space-x-3">
+            <div class="dropdown">
+              <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-5 w-5"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M4 6h16M4 12h8m-8 6h16"
+                  />
+                </svg>
+              </div>
+              <ul
+                tabindex="0"
+                class="menu menu-sm dropdown-content bg-gray-100 rounded-box z-[1] mt-3 w-40 pr-2 shadow right-0"
+              >
+                <div class="font-bold">
+                  <li><a>Home</a></li>
+                  <li><a href="{% url "available_book" %}">EduShare</a></li>
+                  <li>
+                    <details>
+                      <summary>Community</summary>
+                      <ul class="p-2 text-xl">
+                        <li><a>Teacher</a></li>
+                        <li><a>Alumni</a></li>
+                        <li><a>Students</a></li>
+                      </ul>
+                    </details>
+                  </li>
+                  <li>
+                    <details>
+                      <summary>Study Hub</summary>
+                      <ul class="p-2 text-xl">
+                        <li><a>Documents</a></li>
+                        <li><a>My_Notes</a></li>
+                      </ul>
+                    </details>
+                  </li>
+                </div>
+                <li class="flex items-center">
+                  <i class="fa-solid fa-bell text-4xl text-blue-900"></i>
+                </li>
+                <li>
+                  <a
+                    class="btn border border-violet-900 w-full text-center bg-white"
+                    >Login</a
+                  >
+                </li>
+                <li class="mt-2">
+                  <a class="btn bg-violet-700 w-full text-center text-white"
+                    >Register</a
+                  >
+                </li>
+              </ul>
+            </div>
+
+            <div class="hidden lg:flex space-x-4">
+              <a class="transition duration-1000 ease-in-out hover:scale-110" href="{% url "notice" %}">
+                <i class="fa-solid fa-bell text-4xl text-blue-900 cursor-pointer"></i>
+              </a>
+              <a class="btn border border-blue-900 text-center bg-white"
+                >Login</a
+              >
+              <a class="btn bg-[#0033A0] text-center text-white">Register</a>
+            </div>
+          </div>
+        </div>
+      </header>
+    </section>
+
+
+
+
+    <div >
+        {% block content %}{% endblock %}
+    </div>
+  </body>
+</html>

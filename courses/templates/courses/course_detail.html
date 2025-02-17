@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block title %}Course Details{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h1></h1>
+    <h2>{{ course.name }}</h2>
+    <p>Course Code: {{ course.code }}</p>
+    <p>Semester: {{ course.semester.name }}</p>
+    
+    <h3>Options</h3>
+    <ul>
+        <li><a href="{% url 'upload_document' course.id %}">Send Document</a></li>
+
+        <li><a href="{% url 'document_list' course.id %}">View Documents</a></li>
+    </ul>
+</div>
+{% endblock %}

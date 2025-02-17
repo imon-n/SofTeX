@@ -1,0 +1,12 @@
+
+{% extends "base.html" %}
+{% block content %}
+<h1 class="text-secondary text-center">Semesters</h1>
+<ul>
+    {% for semester in semesters %}
+    <a class="btn btn-info mx-5 mt-4" href="{% url 'semester_detail' semester.id %}">{{ semester.name }}</a>
+    {% endfor %}
+</ul>
+<br>
+
+{% endblock%}

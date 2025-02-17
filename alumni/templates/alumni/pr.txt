@@ -1,0 +1,6 @@
+{% if teacher.linkedin %}
+<a href="{{ teacher.linkedin }}" class="btn btn-primary" target="_blank">LinkedIn</a>
+{% endif %}
+{% if teacher.email %}
+<a href="mailto:{{ teacher.email }}" class="btn btn-info mx-2" target="_blank">Email</a>
+{% endif %} 

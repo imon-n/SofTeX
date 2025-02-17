@@ -1,0 +1,69 @@
+{% extends 'base.html' %}
+{% block title %}Sessions{% endblock %}
+
+{% block content %}
+<h2 class="text-center text-danger">Sessions</h2>
+
+<h3>Alumni Sessions</h3>
+<ul>
+    {% for session in alumni_sessions %}
+        <li><a href="{% url 'alumni_list' session.id %}">Alumni of Session {{ session.year }}</a></li>
+    {% endfor %}
+</ul>
+
+<h3>Current Student Sessions</h3>
+<ul>
+    {% for session in student_sessions %}
+        <li><a href="{% url 'student_list' session.id %}">Students of Session {{ session.year }}</a></li>
+    {% endfor %}
+</ul>
+
+{% endblock %}
+
+
+
+
+
+
+
+
+
+{% comment %} {% extends 'base.html' %}
+
+{% block title %}Sessions{% endblock %}
+
+{% block content %}
+<h2> Sessions</h2>
+<div class="session-list">
+    {% for session in sessions %}
+        <div class="session-box">
+            <a href="{% url 'student_list' session.id %}">
+                {{ session.year }}
+            </a>
+        </div>
+    {% endfor %}
+</div>
+{% endblock %} {% endcomment %}
+
+
+
+
+
+
+
+{% comment %} {% extends 'base.html' %}
+
+{% block title %}Alumni Sessions{% endblock %}
+
+{% block content %}
+<h2>Alumni Sessions</h2>
+<div class="session-list">
+    {% for session in sessions %}
+        <div class="session-box">
+            <a href="{% url 'alumni_list' session.id %}">
+                {{ session.year }}
+            </a>
+        </div>
+    {% endfor %}
+</div>
+{% endblock %} {% endcomment %}
