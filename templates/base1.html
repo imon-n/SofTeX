@@ -97,14 +97,15 @@
                 class="menu menu-sm dropdown-content bg-gray-100 rounded-box z-[1] mt-3 w-40 pr-2 shadow right-0"
               >
                 <div class="font-bold">
-                  <li><a>Home</a></li>
+                  <li><a href="{% url "indexpage" %}">Home</a></li>
+                  <li><a href="{% url "homepage" %}">Academics</a></li>
                   <li><a href="{% url "available_book" %}">EduShare</a></li>
                   <li>
                     <details>
                       <summary>Community</summary>
                       <ul class="p-2 text-xl">
-                        <li><a>Teacher</a></li>
-                        <li><a>Alumni</a></li>
+                        <li><a href="{% url "faculty_list1" %}">Teacher</a></li>
+                        <li><a href="{% url "alumni_list1" %}">Alumni</a></li>
                         <li><a>Students</a></li>
                       </ul>
                     </details>
