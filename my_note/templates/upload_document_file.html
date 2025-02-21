@@ -1,15 +1,16 @@
-
-{% extends "base.html" %}
+{% extends "base1.html" %}
 
 {% block content %}
-<div class="container mt-5">
-    <h2 class="text-cente mb-4">Upload File </h2>
+<div class="max-w-2xl mx-auto mt-10 p-6 bg-gray-100 shadow-md rounded-lg">
+    <h2 class="text-center text-2xl font-bold mb-4">Upload - File</h2>
     <form method="post" enctype="multipart/form-data">
         {% csrf_token %}
-        {{ form.as_p }} 
-        <div class="d-flex justify-content-center mt-5">
-            <button type="submit" class="btn btn-primary">Upload</button>
-        </div>        
+        <div class="space-y-4">
+            {{ form.as_p }}
+        </div>
+        <div class="flex justify-center mt-5">
+            <button type="submit" class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-6 rounded-lg shadow-md">Upload</button>
+        </div>
     </form>
 </div>
-{% endblock%}
+{% endblock %}

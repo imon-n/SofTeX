@@ -15,3 +15,8 @@ def course_list(request, semester_id):
 def course_detail(request, course_id):
     course = get_object_or_404(Course, id=course_id)
     return render(request, 'courses/course_detail.html', {'course': course})
+
+def document_list(request, course_id):
+    course = get_object_or_404(Course, id=course_id)
+    documents = course.documents.all()
+    return render(request, 'courses/course_list.html', {'course': course, 'documents': documents})

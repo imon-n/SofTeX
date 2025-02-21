@@ -1,17 +1,25 @@
-{% extends 'base.html' %}
-
+{% extends 'base1.html' %}
+{% load static %}
 {% block content %}
-<h2>Uploaded Files for {{ course.name }}</h2>
-{% for document in documents %}
-    <div class="card" style="width: 18rem;">
-        <div class="card-body">
-            <h5 class="card-title">{{ document.title }}</h5>
-            {% if document.files %}
-                <a href="{{ document.files.url }}" class="btn btn-primary" target="_blank">View File</a>
-            {% endif %}
-        </div>
+<h2 class="text-2xl font-bold text-center my-6 mb-8"> {{ course.name }}</h2>
+
+<div class="container mx-auto px-4">
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-6">
+        {% for document in documents %}
+            <div class="bg-slate-300 shadow-xl rounded-lg p-6 w-full max-w-xs mx-auto transform hover:scale-105 transition duration-300">
+                <div class="flex justify-center mb-4">
+                    <img class="w-24 h-24" src="{% static 'image/pdf.png' %}" alt="PDF Icon">
+                </div>
+                <h5 class="text-lg font-semibold mb-3 text-gray-800 text-center">{{ document.title }}</h5>
+                {% if document.files %}
+                    <a href="{{ document.files.url }}" 
+                       class="block text-center bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 transition duration-300"
+                       target="_blank">
+                        View File
+                    </a>
+                {% endif %}
+            </div>
+        {% endfor %}
     </div>
-    <br>
-{% endfor %}
-<a href="{% url 'upload_document' course.id %}" class="btn btn-success">Upload New Document</a>
+</div>
 {% endblock %}

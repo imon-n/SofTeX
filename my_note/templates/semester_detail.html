@@ -1,13 +1,19 @@
-{% extends "base.html" %}
-
+{% extends 'base1.html' %} {% block title %}Courses in {{ semester.name }} {% endblock %} 
 {% block content %}
-<div class="text-center mt-4">
-  <h2>{{semester}}'s Courses</h2>
+<div class="container mx-auto mt-10 px-4">
+  <h1 class="text-gray-700 text-center text-4xl font-bold mb-6">
+    All Courses of the {{ semester.name }} 
+  </h1>
+  <ul
+    class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 text-center text-xl font-bold"
+  >
     {% for course in courses %}
-       <ul><a class="btn btn-secondary  " href="{% url 'my_course_detail' course.id %}">{{ course.name }}</a> <span>--</span></ul>
-    {% endfor %} 
-    <br><br>
-  <a class="btn btn-danger mx-5 mt-3" href="{% url 'add_course' semester.id %}">Add Course</a>
-  <br><br>
+    <a
+      class="block px-6 py-4 bg-violet-700 text-white rounded-lg hover:bg-blue-600 shadow-md"
+      href="{% url 'my_course_detail' course.id %}"
+      >{{ course.name }}</a
+    >
+    {% endfor %}
+  </ul>
 </div>
 {% endblock %}

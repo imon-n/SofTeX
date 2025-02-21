@@ -51,7 +51,7 @@
           <div class="navbar-center hidden lg:flex">
             <ul class="menu menu-horizontal px-1 text-xl font-semibold">
               <li><a href="{% url "indexpage" %}">Home</a></li>
-              <li><a href="{% url "homepage" %}">Academics</a></li>
+              {% comment %} <li><a href="{% url "homepage" %}">Academics</a></li> {% endcomment %}
               <li><a href="{% url "available_book" %}">EduShare</a></li>
               <li>
                 <details>
@@ -67,8 +67,8 @@
                 <details>
                   <summary>Study Hub</summary>
                   <ul class="p-2 text-xl">
-                    <li><a>Documents</a></li>
-                    <li><a>My_Notes</a></li>
+                    <li><a href="{% url "semester_list" %}">Documents</a></li>
+                    <li><a href="{% url "my_semester" %}">My_Notes</a></li>
                   </ul>
                 </details>
               </li>
@@ -114,8 +114,8 @@
                     <details>
                       <summary>Study Hub</summary>
                       <ul class="p-2 text-xl">
-                        <li><a>Documents</a></li>
-                        <li><a>My_Notes</a></li>
+                        <li><a href="{% url "semester_list" %}">Documents</a></li>
+                        <li><a href="{% url "my_semester" %}">My_Notes</a></li>
                       </ul>
                     </details>
                   </li>
@@ -142,9 +142,9 @@
                 <i class="fa-solid fa-bell text-4xl text-blue-900 cursor-pointer"></i>
               </a>
               <a class="btn border border-blue-900 text-center bg-white"
-                >Login</a
+                >Profile</a
               >
-              <a class="btn bg-[#0033A0] text-center text-white">Register</a>
+              <a class="btn bg-[#0033A0] text-center text-white">Logout</a>
             </div>
           </div>
         </div>
@@ -155,7 +155,7 @@
 
 
     <div >
-        {% block content %}{% endblock %}
+      {% block content %}{% endblock %}
     </div>
   </body>
 </html>

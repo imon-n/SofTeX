@@ -1,11 +1,39 @@
-{% extends 'base.html' %} 
-{% load crispy_forms_tags %} 
+{% extends 'base1.html' %}
+{% load crispy_forms_tags %}
+
 {% block content %}
+<div class="flex items-center justify-center min-h-screen bg-gray-100">
+  <div class="bg-white shadow-xl rounded-2xl mt-10 mb-36 p-8 w-full max-w-lg border-2 border-blue-500">
+    <h2 class="text-3xl font-bold text-center text-blue-600 mb-6">Share a Resource</h2>
 
-<form method="post" enctype="multipart/form-data" style="width: 50%; margin: auto">
-  {% csrf_token %} 
-  {{form.as_p}}
-  <button class="btn btn-warning">Submit</button>
-</form>
+    <form method="post" enctype="multipart/form-data" class="space-y-6">
+      {% csrf_token %}
+      
+      <!-- Book Name -->
+      <div class="space-y-2">
+        <label class="text-lg font-medium text-gray-700">Book Name</label>
+        <input type="text" name="book_name" class="w-full px-4 py-2 bg-gray-100 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400 shadow-sm">
+      </div>
 
+      <!-- About -->
+      <div class="space-y-2">
+        <label class="text-lg font-medium text-gray-700">About</label>
+        <textarea name="about" rows="4" class="w-full px-4 py-2 bg-gray-100 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400 shadow-sm"></textarea>
+      </div>
+
+      <!-- Image Upload -->
+      <div class="space-y-2">
+        <label class="text-lg font-medium text-gray-700">Upload Image</label>
+        <input type="file" name="image" class="w-full px-4 py-2 bg-gray-100 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400 shadow-sm">
+      </div>
+
+      <!-- Submit Button -->
+      <div class="text-center">
+        <button class="w-full bg-violet-500 hover:bg-violet-600 text-white font-bold py-3 rounded-lg transition duration-300 shadow-md">
+          Submit
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
 {% endblock %}

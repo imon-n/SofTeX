@@ -1,29 +1,19 @@
-{% extends 'base.html' %}
-
-{% block title %}Courses in {{ semester.name }}{% endblock %}
-
+{% extends 'base1.html' %} {% block title %}Courses in {{ semester.name }} {% endblock %} 
 {% block content %}
-<h2>All Documents for {{ semester.name }}</h2>
-<div class="course-list">
+<div class="container mx-auto mt-10 px-4">
+  <h1 class="text-gray-700 text-center text-4xl font-bold mb-6">
+    All Courses of the {{ semester.name }} 
+  </h1>
+  <ul
+    class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 text-center text-xl font-bold"
+  >
     {% for course in courses %}
-        <div class="course-box">
-            <a href="{% url 'course_detail' course.id %}">
-                {{ course.name }}
-            </a>
-        </div>
+    <a
+      class="block px-6 py-4 bg-violet-700 text-white rounded-lg hover:bg-blue-600 shadow-md"
+      href="{% url 'document_list' course.id %}"
+      >{{ course.name }}</a
+    >
     {% endfor %}
+  </ul>
 </div>
-
-
-{% if routine %}
-    <div class="routine-section">
-        <h3>Routine for {{ semester.name }}</h3>
-        <p>{{ routine.title }}</p>
-        <a href="{{ routine.file.url }}">Download Routine</a>
-    </div>
-{% else %}
-    <p>No routine available for this semester.</p>
-{% endif %}
-
-<a href="{% url 'semester_list' %}">Back to Semesters</a>
 {% endblock %}
