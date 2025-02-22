@@ -13,6 +13,10 @@ DEBUG = True
 ALLOWED_HOSTS = ["*"]
 
 
+CSRF_TRUSTED_ORIGINS = [
+    "https://softex.onrender.com",  # Add your site here
+]
+
 # Application definition
 
 INSTALLED_APPS = [
