@@ -1,0 +1,18 @@
+{% extends "base1.html" %}
+{% block content %}
+<div class="max-w-lg mx-auto mt-10 p-6 bg-red-100 shadow-md rounded-lg text-center">
+    <h2 class="text-xl font-bold text-red-600 mb-4">Are you sure you want to delete this document?</h2>
+    <p class="mb-6">{{ document.title }}</p>
+
+    <form method="post">
+        {% csrf_token %}
+        <button type="submit" class="bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-6 rounded-lg shadow-md">
+            Yes, Delete
+        </button>
+        <a href="{% url 'my_course_detail' course_id=document.course.id %}" 
+           class="ml-4 bg-gray-500 hover:bg-gray-600 text-white font-bold py-2 px-6 rounded-lg shadow-md">
+            Cancel
+        </a>
+    </form>
+</div>
+{% endblock %}

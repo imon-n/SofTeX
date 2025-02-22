@@ -51,7 +51,7 @@
                     <td class="border border-gray-300 px-4 py-2">
                         <div class="flex justify-center gap-2">
                             <a href="{% url 'edit_document' document.id %}" class="bg-yellow-500 text-white px-3 py-1 rounded">Edit</a>
-                            <a href="{% url 'delete_document' document.id %}" class="bg-red-500 text-white px-3 py-1 rounded">Delete</a>
+                            <a href="{% url 'delete_document' course_id=document.course.id id=document.id %}" class="bg-red-500 text-white px-3 py-1 rounded">Delete</a>
                         </div>
                     </td>
                 </tr>

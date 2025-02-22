@@ -10,6 +10,6 @@ urlpatterns = [
     path('add-course/<int:semester_id>/', views.add_course, name='add_course'), 
 
     path('courses/<int:id>',views.edit_document,name="edit_document"),
-    path('courses/<int:course_id>/',views.delete_document,name="delete_document"),
+    # path('courses/<int:course_id>/',views.delete_document,name="delete_document"),
+    path('courses/<int:course_id>/delete/<int:id>/', views.delete_document, name="delete_document"),
 ]
-

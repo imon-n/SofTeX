@@ -25,7 +25,7 @@ def userlogin(request):
 
             if user is not None:
                 login(request,user)
-                return redirect('profile')
+                return redirect('homepage')
     else:
         form = AuthenticationForm()
     return render(request,'users/login.html',{'form':form})
@@ -37,4 +37,4 @@ def profile(request):
 @login_required
 def user_logout(request):
     logout(request)
-    return redirect('homepage')
+    return redirect('indexpage')

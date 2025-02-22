@@ -74,19 +74,39 @@ def create_document(request, course_id):
     return render(request, 'create_document.html', {'form': form})
 
 
-def edit_document(request, id):
-    my_doc = My_Document.objects.get(pk=id)
-    my_doc_form = My_DocumentForm(instance=my_doc)
+# def edit_document(request, id):
+#     my_doc = My_Document.objects.get(pk=id)
+#     my_doc_form = My_DocumentForm(instance=my_doc)
 
+#     if request.method == 'POST':
+#         my_doc_form = My_DocumentForm(request.POST, instance=my_doc)
+#         if my_doc_form.is_valid():
+#             my_doc_form.save()
+#             return redirect('my_course_detail', course_id=my_doc.course.id)  # Pass course_id
+#     return render(request, 'create_document.html', {'form': my_doc_form})
+
+
+def edit_document(request, id):
+    my_doc = get_object_or_404(My_Document, pk=id)  # Use get_object_or_404 for better error handling
     if request.method == 'POST':
         my_doc_form = My_DocumentForm(request.POST, instance=my_doc)
         if my_doc_form.is_valid():
             my_doc_form.save()
-            return redirect('my_course_detail', course_id=my_doc.course.id)  # Pass course_id
-    return render(request, 'create_document.html', {'form': my_doc_form})
+            return redirect('my_course_detail', course_id=my_doc.course.id)  # Pass course_id correctly
+    else:
+        my_doc_form = My_DocumentForm(instance=my_doc)
+
+    return render(request, 'edit_document.html', {'form': my_doc_form})
 
 
-def delete_document(request,id):
-    my_doc = My_Document.objects.get(pk=id)
-    my_doc.delete()
-    return redirect('my_course_detail')
+def delete_document(request, course_id, id):
+    my_doc = get_object_or_404(My_Document, pk=id)
+    if request.method == "POST":
+        my_doc.delete()
+        return redirect('my_course_detail', course_id=course_id)  # Ensure correct redirection
+    return render(request, 'confirm_delete.html', {'document': my_doc})
+
+# def delete_document(request,id):
+#     my_doc = My_Document.objects.get(pk=id)
+#     my_doc.delete()
+#     return redirect('my_course_detail')

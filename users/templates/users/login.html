@@ -1,22 +1,37 @@
-{% extends "base.html" %}
-{% load crispy_forms_tags %}
+{% extends "base1.html" %}
 
 {% block content %}
-    <form method="post" style="width: 50%; margin: auto;" novalidate>
-        <h1>login page</h1>
-        {% csrf_token %}
+<div class="flex items-center justify-center min-h-screen bg-gray-100">
+  <div class="bg-white shadow-xl rounded-2xl p-8 w-full max-w-md border-2 border-blue-500 -mt-32">
+    <h1 class="text-3xl font-bold text-center text-blue-600 mb-6">Login</h1>
 
-        {% if form.non_field_errors %}
-            {% for er in form.non_field_errors %}
-                <p class="bg-danger text-white p-3">{{er}}</p>
-            {% endfor %}
-        {% endif %}
-        
-        {% for fm in form %}
-            {{fm.label_tag}}
-            {{fm}}
-            {{fm.errors }}
+    <form method="post" class="space-y-4" novalidate>
+      {% csrf_token %}
+
+      <!-- Display non-field errors -->
+      {% if form.non_field_errors %}
+        {% for er in form.non_field_errors %}
+          <p class="bg-red-500 text-white p-3 rounded-md text-center">{{ er }}</p>
         {% endfor %}
-        <button class="btn btn-warning" type="submit">log in</button>
+      {% endif %}
+
+      {% for fm in form %}
+      <div class="space-y-2">
+        <label class="text-lg font-medium text-gray-700">{{ fm.label_tag }}</label>
+        <input 
+          type="{{ fm.field.widget.input_type }}" 
+          name="{{ fm.name }}" 
+          class="w-full px-4 py-2 bg-white border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400 shadow-sm" 
+          {% if fm.value != None %} value="{{ fm.value }}" {% endif %}
+        >
+        <p class="text-red-500 text-sm">{{ fm.errors }}</p>
+      </div>
+      {% endfor %}
+
+      <button class="w-full bg-yellow-500 hover:bg-yellow-600 text-white font-bold py-3 rounded-lg transition duration-300 shadow-md">
+        Log In
+      </button>
     </form>
-{% endblock  %}
+  </div>
+</div>
+{% endblock %}

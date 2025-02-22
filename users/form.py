@@ -4,9 +4,9 @@ from django import forms
 
 class RegisterForm(UserCreationForm):
     first_name = forms.CharField(max_length=30, required=True)
-    email = forms.CharField(widget=forms.EmailInput(attrs={'id':'required'}))
+    last_name = forms.CharField(max_length=30, required=True)  # Added last_name
+    email = forms.EmailField(required=True)
+
     class Meta:
         model = User
-        fields = ['username','first_name','last_name','email', 'password1', 'password2']
-        # fields = '__all__'
-        
+        fields = ['username', 'first_name', 'last_name', 'email', 'password1', 'password2']

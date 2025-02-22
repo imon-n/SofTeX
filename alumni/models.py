@@ -15,16 +15,3 @@ class Alumni(models.Model):
 
     def __str__(self):
         return self.name
-
-
-class Current_Student(models.Model):
-    name = models.CharField(max_length=200)
-    student_id = models.IntegerField()
-    picture = models.ImageField(upload_to='faculty_pictures/', blank=True, null=True)
-    # linkedin = models.URLField(blank=True, null=True)
-    email = models.EmailField(blank = True, null=True)
-    interested_fields = models.TextField()
-    session = models.ForeignKey(Session, on_delete=models.CASCADE, related_name='current_student')
-
-    def __str__(self):
-        return self.name
