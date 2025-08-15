@@ -1,9 +1,13 @@
+Got it — you want the README in **clickable, clean Markdown** format without the code block wrapping the whole thing so GitHub renders links and headers properly.
 
-````markdown
+Here’s the **fixed version**:
+
+---
+
 # SofTeX – University/Department Management System
 
-SofTeX is a **Django-based web application** designed to streamline academic and departmental activities.  
-It centralizes **student, faculty, course, library, and communication management** into one platform,  
+SofTeX is a **Django-based web application** designed to streamline academic and departmental activities.
+It centralizes **student, faculty, course, library, and communication management** into one platform,
 providing a seamless experience for administrators, teachers, and students.
 
 ---
@@ -17,42 +21,47 @@ providing a seamless experience for administrators, teachers, and students.
 ## 🚀 Features
 
 ### 📚 Academic Management
-- **Courses** – Manage course details, descriptions, and materials
-- **Faculty** – Maintain faculty profiles and contact information
-- **Alumni** – Showcase alumni details for networking and inspiration
+
+* **Courses** – Manage course details, descriptions, and materials
+* **Faculty** – Maintain faculty profiles and contact information
+* **Alumni** – Showcase alumni details for networking and inspiration
 
 ### 📖 Library & Resources
-- **Borrow Book** – Track borrowing, returning, and availability of books
-- **Documents** – Share and store academic resources & files
-- **My Note** – Personal notes section for students/faculty
+
+* **Borrow Book** – Track borrowing, returning, and availability of books
+* **Documents** – Share and store academic resources & files
+* **My Note** – Personal notes section for students/faculty
 
 ### 📰 Communication
-- **Notice Board** – Post important announcements and updates
-- **Media** – Manage and display images or other media files
+
+* **Notice Board** – Post important announcements and updates
+* **Media** – Manage and display images or other media files
 
 ### 👤 User Management
-- Role-based access for **Admin**, **Faculty**, and **Student**
-- Secure authentication system with password hashing
+
+* Role-based access for **Admin**, **Faculty**, and **Student**
+* Secure authentication system with password hashing
 
 ---
 
 ## 🛠 Tech Stack
 
-- **Backend:** Django (Python)
-- **Frontend:** HTML, CSS, Bootstrap/Tailwind
-- **Database:** SQLite (default) / PostgreSQL (production)
-- **Authentication:** Django Auth System
-- **Deployment:** Render
+* **Backend:** Django (Python)
+* **Frontend:** HTML, CSS, Bootstrap/Tailwind
+* **Database:** SQLite (default) / PostgreSQL (production)
+* **Authentication:** Django Auth System
+* **Deployment:** Render
 
 ---
 
 ## 📦 Installation
 
 1. **Clone the repository**
+
    ```bash
    git clone https://github.com/imon-n/SofTeX.git
    cd SofTeX
-````
+   ```
 
 2. **Create a virtual environment**
 
@@ -121,8 +130,7 @@ softex/
 
 This project is licensed under the MIT License.
 
-```
-
 ---
-Do you want me to create that enhanced version?
-```
+
+If you want, I can now **add a “How to Use” section + screenshots from your live site** so it’s more appealing for portfolio and job applications.
+Do you want me to add that?
