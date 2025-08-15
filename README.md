@@ -1,8 +1,3 @@
-Got it — you want the README in **clickable, clean Markdown** format without the code block wrapping the whole thing so GitHub renders links and headers properly.
-
-Here’s the **fixed version**:
-
----
 
 # SofTeX – University/Department Management System
 
@@ -38,7 +33,6 @@ providing a seamless experience for administrators, teachers, and students.
 * **Media** – Manage and display images or other media files
 
 ### 👤 User Management
-
 * Role-based access for **Admin**, **Faculty**, and **Student**
 * Secure authentication system with password hashing
 
@@ -123,12 +117,6 @@ softex/
 **Md Imon**
 🔗 GitHub: [imon-n](https://github.com/imon-n)
 🌍 Live: [https://softex.onrender.com/](https://softex.onrender.com/)
-
----
-
-## 📜 License
-
-This project is licensed under the MIT License.
 
 ---
 
